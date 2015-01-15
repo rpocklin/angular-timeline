@@ -1,5 +1,5 @@
 {
-  "name": "angular-timeline",
+  "name": "angular-timeline-responsive",
   "version": "1.0.0",
   "devDependencies": {
     "grunt": "~0.4.1",

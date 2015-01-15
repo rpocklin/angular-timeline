@@ -1,6 +1,6 @@
 {
-  "name": "angular-timeline",
-  "version": "0.0.7",
+  "name": "angular-timeline-responsive",
+  "version": "1.0.0",
   "license": "MIT",
   "main": "src/angular-timeline.js",
   "keywords": [
