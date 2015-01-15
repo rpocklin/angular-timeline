@@ -1,5 +1,0 @@
-Add changelog and grunt-bump
-Update readme.
-Export file and templates and create an example.
-
-Look at tests / code coverage?
