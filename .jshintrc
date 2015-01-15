@@ -1,0 +1,28 @@
+{
+  "globalstrict": true,
+  "debug":        false,
+  "node":         false,
+  "devel":        true,
+  "boss":         true,
+  "curly":        false,
+  "eqeqeq":       true,
+  "eqnull":       true,
+  "expr":         true,
+  "immed":        true,
+  "loopfunc":     true,
+  "noarg":        true,
+  "onevar":       false,
+  "quotmark":     "single",
+  "smarttabs":    true,
+  "trailing":     true,
+  "undef":        true,
+  "unused":       false,
+  "globals":      {
+    "angular":  false,
+    "$":        false,
+    "jQuery":   false,
+    "Backbone": false,
+    "_":        false,
+    "document": false
+  }
+}

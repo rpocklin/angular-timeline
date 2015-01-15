@@ -1,0 +1,26 @@
+{
+  "name":         "angular-timeline",
+  "repository":   "rpocklin/angular-timeline",
+  "description":  "Responsive vertical timeline graph with Bootstrap 3.",
+  "version":      "0.0.7",
+  "keywords":     [
+    "angular, timeline, history, list, bootstrap"
+  ],
+  "main":         "src/angular-timeline.js",
+  "dependencies": {
+    "angular":           "1.2.16",
+    "angular-bootstrap": "~0.11.0",
+    "angular-ui-router": "0.2.10"
+  },
+  "scripts":      ["src/angular-timeline.js"],
+  "development":  {
+    "dependencies": {
+      "angular-mocks": "1.2.16",
+      "sinon":         "1.9.0",
+      "jasmine-sinon": "0.3.1",
+      "underscore":    "~1.7.0",
+      "jquery":        "~2.1.1"
+    }
+  },
+  "license":      "MIT"
+}
