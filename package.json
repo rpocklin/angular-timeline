@@ -1,6 +1,6 @@
 {
   "name": "angular-timeline",
-  "version": "0.0.7",
+  "version": "1.0.0",
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-autoprefixer": "~0.7.3",
