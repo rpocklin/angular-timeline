@@ -3,13 +3,7 @@
 An Angular.JS directive that generates a responsive, data-driven vertical timeline to tell a story, 
 show history or describe a sequence of events.
 
-[![Build Status](https://secure.travis-ci.org/rpocklin/angular-timeline.svg)](http:/travis-ci.org/rpocklin/angular-timeline)
-[![Coverage Status](https://coveralls.io/repos/rpocklin/angular-timeline/badge.png)](https://coveralls.io/r/rpocklin/angular-timeline)
-
 [Original Implementation (HTML / Javascript)](http://bootsnipp.com/snippets/featured/timeline-responsive)
-
-[Demo](http://rpocklin.github.io/angular-timeline/example/index.html)
-[Demo without bootstrap](http://rpocklin.github.io/angular-timeline/example/index-no-bootstrap.html)
 
 # Inspiration
 [1](http://bootsnipp.com/snippets/featured/two-column-timeline-not-responsive)
@@ -20,7 +14,10 @@ show history or describe a sequence of events.
 
 ## Installation
 
-1. Install the plugin into your Angular.js project, manually or via `bower install angular-timeline --save`
+1. Install the plugin into your Angular.js project, manually or via
+
+  `bower install angular-timeline --save`
+
 1. Include `angular-timeline.css` in your app:
 
   `<link rel="stylesheet" href="bower_components/angular-timeline/angular-timeline.css" />`
@@ -83,7 +80,7 @@ I had also added an optional `<timeline-footer>` to go after `<timeline-content>
 
 - You can use either the SASS styles directly file under `/src` or the compiled CSS files, up to you :)
 
-- If you are using Bootstrap 3 it affects the timeline CSS, so include `angular-timeline-bootstrap.[css|scss}` to re-adjust the offsets e.g:
+- If you are using Bootstrap 3 it affects the timeline CSS, so include `angular-timeline-bootstrap.[css|scss]}` to re-adjust the offsets e.g:
 
 ```html
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
@@ -118,6 +115,7 @@ I had also added an optional `<timeline-footer>` to go after `<timeline-content>
 
 ## TODO
 
+- Online Example (gh-pages)
 - Add some tests
 - Add some examples with ng-repeat based on JSON datasets.
 

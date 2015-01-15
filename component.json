@@ -2,7 +2,7 @@
   "name":         "angular-timeline",
   "repository":   "rpocklin/angular-timeline",
   "description":  "Responsive vertical timeline graph with Bootstrap 3.",
-  "version":      "0.0.7",
+  "version":      "1.0.0",
   "keywords":     [
     "angular, timeline, history, list, bootstrap"
   ],
