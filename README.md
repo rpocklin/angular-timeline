@@ -3,6 +3,12 @@
 An Angular.JS directive that generates a responsive, data-driven vertical timeline to tell a story, 
 show history or describe a sequence of events.
 
+# Demo / Example
+
+[Demo](http://rpocklin.github.io/angular-timeline/example/index.html)
+
+[Demo without bootstrap](http://rpocklin.github.io/angular-timeline/example/index-no-bootstrap.html)
+
 [Original Implementation (HTML / Javascript)](http://bootsnipp.com/snippets/featured/timeline-responsive)
 
 # Inspiration
