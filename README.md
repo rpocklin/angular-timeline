@@ -121,7 +121,6 @@ I had also added an optional `<timeline-footer>` to go after `<timeline-content>
 
 ## TODO
 
-- Online Example (gh-pages)
 - Add some tests
 - Add some examples with ng-repeat based on JSON datasets.
 
