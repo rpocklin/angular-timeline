@@ -19,7 +19,7 @@
     "karma-ng-html2js-preprocessor": "~0.1.0",
     "karma-phantomjs-launcher": "~0.1.4",
     "phantomjs": "~1.9.7-15",
-    "grunt-sass": "^0.17.0",
+    "grunt-sass": "^0.16.1",
     "jshint-stylish": "~0.1.3",
     "load-grunt-tasks": "~0.6.0",
     "time-grunt": "~0.2.1"
