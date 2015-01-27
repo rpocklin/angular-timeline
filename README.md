@@ -22,7 +22,7 @@ show history or describe a sequence of events.
 
 1. Install the plugin into your Angular.js project, manually or via
 
-  `bower install angular-timeline-responsive --save`
+  `bower install angular-timeline --save`
 
 1. Include `angular-timeline.css` in your app:
 
