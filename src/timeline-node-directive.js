@@ -6,11 +6,9 @@ angular.module('angular-timeline').directive('timelineNode', function() {
     scope: {
       side: '@'
     },
-    restrict: 'E',
+    restrict: 'AE',
     replace: true,
     transclude: true,
-    template: '<li ng-class="{\'timeline-inverted\': side == \'right\'}" ng-transclude></li>',
-    controller: function($scope, $element, $attrs) {},
-    link: function(scope, element, attrs, parentCtrl) {}
+    template: '<li ng-class="{\'timeline-inverted\': side == \'right\'}" ng-transclude></li>'
   };
 });

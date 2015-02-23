@@ -1,13 +1,12 @@
 'use strict';
-angular.module('angular-timeline', []);// Source: src/timeline-badge-directive.js
+angular.module('angular-timeline', []); // Source: src/timeline-badge-directive.js
 angular.module('angular-timeline').directive('timelineBadge', function() {
   return {
     require: '^timelineNode',
-    restrict: 'E',
+    restrict: 'AE',
     replace: true,
     transclude: true,
-    template: '<div ng-transclude class="timeline-badge"></div>',
-    link: function(scope, element, attrs, parentCtrl) {}
+    template: '<div ng-transclude class="timeline-badge"></div>'
   };
 });
 
@@ -15,24 +14,20 @@ angular.module('angular-timeline').directive('timelineBadge', function() {
 angular.module('angular-timeline').directive('timelineContent', function() {
   return {
     require: '^timelinePanel',
-    restrict: 'E',
+    restrict: 'AE',
     replace: true,
     transclude: true,
-    template: '<div class="timeline-body" ng-transclude></div>',
-    controller: function($scope, $element, $attrs) {},
-    link: function(scope, element, attrs, parentCtrl) {}
+    template: '<div class="timeline-body" ng-transclude></div>'
   };
 });
 
 // Source: src/timeline-directive.js
 angular.module('angular-timeline').directive('timeline', function() {
   return {
-    restrict: 'E',
+    restrict: 'AE',
     replace: true,
     transclude: true,
-    template: '<ul class="timeline" ng-transclude></ul>',
-    controller: function($scope, $element, $attrs) {},
-    link: function(scope, element, attrs, parentCtrl) {}
+    template: '<ul class="timeline" ng-transclude></ul>'
   };
 });
 
@@ -40,11 +35,10 @@ angular.module('angular-timeline').directive('timeline', function() {
 angular.module('angular-timeline').directive('timelineFooter', function() {
   return {
     require: '^timelineContent',
-    restrict: 'E',
+    restrict: 'AE',
     replace: true,
     transclude: true,
-    template: '<div class="timeline-footer" ng-transclude></div>',
-    link: function(scope, element, attrs, parentCtrl) {}
+    template: '<div class="timeline-footer" ng-transclude></div>'
   };
 });
 
@@ -52,12 +46,10 @@ angular.module('angular-timeline').directive('timelineFooter', function() {
 angular.module('angular-timeline').directive('timelineHeading', function() {
   return {
     require: '^timelinePanel',
-    restrict: 'E',
+    restrict: 'AE',
     replace: true,
     transclude: true,
-    template: '<div class="timeline-heading" ng-transclude></div>',
-    controller: function($scope, $element, $attrs) {},
-    link: function(scope, element, attrs, parentCtrl) {}
+    template: '<div class="timeline-heading" ng-transclude></div>'
   };
 });
 
@@ -68,12 +60,10 @@ angular.module('angular-timeline').directive('timelineNode', function() {
     scope: {
       side: '@'
     },
-    restrict: 'E',
+    restrict: 'AE',
     replace: true,
     transclude: true,
-    template: '<li ng-class="{\'timeline-inverted\': side == \'right\'}" ng-transclude></li>',
-    controller: function($scope, $element, $attrs) {},
-    link: function(scope, element, attrs, parentCtrl) {}
+    template: '<li ng-class="{\'timeline-inverted\': side == \'right\'}" ng-transclude></li>'
   };
 });
 
@@ -81,12 +71,10 @@ angular.module('angular-timeline').directive('timelineNode', function() {
 angular.module('angular-timeline').directive('timelinePanel', function() {
   return {
     require: '^timeline',
-    restrict: 'E',
+    restrict: 'AE',
     replace: true,
     transclude: true,
-    template: '<div class="timeline-panel" ng-transclude></div>',
-    controller: function($scope, $element, $attrs) {},
-    link: function(scope, element, attrs, parentCtrl) {}
+    template: '<div class="timeline-panel" ng-transclude></div>'
   };
 });
 
@@ -94,7 +82,7 @@ angular.module('angular-timeline').directive('timelinePanel', function() {
 angular.module('angular-timeline').directive('timelineTitle', function() {
   return {
     require: '^timelineHeading',
-    restrict: 'E',
+    restrict: 'AE',
     replace: true,
     transclude: true,
     template: '<h4 class="timeline-title" ng-transclude></h4>'

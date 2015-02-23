@@ -3,10 +3,9 @@
 angular.module('angular-timeline').directive('timelineFooter', function() {
   return {
     require: '^timelineContent',
-    restrict: 'E',
+    restrict: 'AE',
     replace: true,
     transclude: true,
-    template: '<div class="timeline-footer" ng-transclude></div>',
-    link: function(scope, element, attrs, parentCtrl) {}
+    template: '<div class="timeline-footer" ng-transclude></div>'
   };
 });
