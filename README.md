@@ -115,7 +115,7 @@ I had also added an optional `<timeline-footer>` to go after `<timeline-content>
 
 
 ## History
-
+1.1.0 Removed `replace: true` from all directives (deprecated feature).
 1.0.0 Initial release
 
 
