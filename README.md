@@ -116,7 +116,8 @@ I had also added an optional `<timeline-footer>` to go after `<timeline-content>
 
 ## History
 
-1.0.0 Initial release
+* 1.2.0 Updated example and styling to be more responsive.
+* 1.0.0 Initial release
 
 
 ## TODO
