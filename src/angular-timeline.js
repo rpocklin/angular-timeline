@@ -1,5 +1,5 @@
 'use strict';
-angular.module('angular-timeline', []); // Source: src/timeline-badge-directive.js
+angular.module('angular-timeline', []);// Source: src/timeline-badge-directive.js
 angular.module('angular-timeline').directive('timelineBadge', function() {
   return {
     require: '^timelineNode',
