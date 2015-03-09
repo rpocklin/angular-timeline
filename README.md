@@ -90,8 +90,8 @@ I had also added an optional `<timeline-footer>` to go after `<timeline-content>
 
 ```html
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-  <script src="bower_components/angular-timeline/angular-timeline.js"></script>
-  <script src="bower_components/angular-timeline/angular-timeline-bootstrap.js"></script>
+  <link rel="stylesheet" href="bower_components/angular-timeline/src/angular-timeline-bootstrap.css" />
+  <script src="bower_components/angular-timeline/src/angular-timeline.js"></script>
 ```
 
 
