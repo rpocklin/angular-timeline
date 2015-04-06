@@ -1,6 +1,6 @@
 # Angular Timeline
 
-An Angular.JS directive that generates a responsive, data-driven vertical timeline to tell a story, 
+An Angular.js directive that generates a responsive, data-driven vertical timeline to tell a story, 
 show history or describe a sequence of events.
 
 # Demo / Example
