@@ -4,7 +4,18 @@
   "keywords": "angular, timeline, history, list, bootstrap",
   "homepage":"https://github.com/rpocklin/angular-timeline",
   "author":"Robert Pocklington <rpocklin@gmail.com>",
-  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/rpocklin/angular-timeline"
+  },
+  "keywords": [
+    "angular", "timeline", "history", "events", "list", "responsive", "bootstrap"
+  ],
+  "version": "1.2.1",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.2.26"
+  },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-autoprefixer": "~0.7.3",
@@ -30,9 +41,6 @@
   },
   "engines": {
     "node": ">=0.10.0"
-  },
-  "scripts": {
-    "test": "grunt karma"
   },
   "repository": {
     "type": "git",

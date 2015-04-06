@@ -26,11 +26,11 @@ show history or describe a sequence of events.
 
 1. Include `angular-timeline.css` in your app:
 
-  `<link rel="stylesheet" href="bower_components/angular-timeline/angular-timeline.css" />`
+  `<link rel="stylesheet" href="bower_components/angular-timeline/dist/angular-timeline.css" />`
 
 1. Include `angular-timeline.js` in your app:
 
-  `<script src="bower_components/angular-timeline/angular-timeline.js"></script>`
+  `<script src="bower_components/angular-timeline/dist/angular-timeline.js"></script>`
 
 1. Add `angular-timeline` as a new module dependency in your angular app.
 
@@ -84,14 +84,14 @@ I had also added an optional `<timeline-footer>` to go after `<timeline-content>
 
 - You can use the `side=left` or `side=right` attribute on the `<timeline-node>` element to float the timeline panels left or right accordingly. (when < 768px in width it will push all `<timeline-node>` elements to the right).
 
-- You can use either the SASS styles directly file under `/src` or the compiled CSS files, up to you :)
+- You can use either the SASS styles directly file under `/dist` or the compiled CSS files, up to you :)
 
-- If you are using Bootstrap 3 it affects the timeline CSS, so include `angular-timeline-bootstrap.[css|scss]}` to re-adjust the offsets e.g:
+- If you are using Bootstrap 3 it affects the timeline CSS, so include `angular-timeline-bootstrap.[css|scss]}` instead to re-adjust the offsets e.g:
 
 ```html
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-  <link rel="stylesheet" href="bower_components/angular-timeline/src/angular-timeline-bootstrap.css" />
-  <script src="bower_components/angular-timeline/src/angular-timeline.js"></script>
+  <link rel="stylesheet" href="bower_components/angular-timeline/dist/angular-timeline-bootstrap.css" />
+  <script src="bower_components/angular-timeline/dist/angular-timeline.js"></script>
 ```
 
 
@@ -108,13 +108,14 @@ I had also added an optional `<timeline-footer>` to go after `<timeline-content>
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Make your changes, run `grunt karma` to ensure all tests pass.  (Ideally add more tests!)
 3. Commit your changes (`git commit -am 'Added some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
 
 
 ## History
+
+* 1.2.1 Cleaned up dependencies and build steps.
 * 1.2.0 Updated example and styling to be more responsive.
 * 1.0.0 Initial release
 
@@ -125,7 +126,7 @@ I had also added an optional `<timeline-footer>` to go after `<timeline-content>
 - Add some examples with ng-repeat based on JSON datasets.
 
 ## Thanks
-luisrudge for the original vanilla JS implementation on [Bootsnipp](http://bootsnipp.com/snippets/featured/timeline-responsive)
+*luisrudge* for the original vanilla JS implementation on [Bootsnipp](http://bootsnipp.com/snippets/featured/timeline-responsive)
 
 
 ## License

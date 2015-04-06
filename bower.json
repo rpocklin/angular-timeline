@@ -1,10 +1,10 @@
 {
   "name": "angular-timeline",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "license": "MIT",
   "main": "src/angular-timeline.js",
   "keywords": [
-    "angular, timeline, history, list, bootstrap"
+    "angular", "timeline", "history", "events", "list", "responsive", "bootstrap"
   ],
   "ignore": [
     "**/.*",
@@ -16,15 +16,15 @@
     "Gruntfile.js",
     "package.json",
     "component.json",
-    "bower.json",
-    "karma.conf.js"
+    "karma.conf.js",
+    "src"
   ],
   "dependencies": {
-    "angular": "^1.2.26",
-    "angular-bootstrap": "^0.11.2",
-    "angular-ui-router": "^0.2.11"
+    "angular": "^1.2.26"
   },
   "devDependencies": {
+    "angular-bootstrap": "^0.12.1",
+    "angular-ui-router": "^0.2.11",
     "angular-mocks": "^1.2.26",
     "sinon": "1.9.0",
     "jasmine-sinon": "0.3.1",

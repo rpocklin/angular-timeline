@@ -27,7 +27,7 @@ module.exports = function(grunt) {
 
     },
 
-    clean: ['src/angular-timeline.js'],
+    clean: ['dist/*.js'],
 
     concat: {
       dist: {
@@ -41,15 +41,15 @@ module.exports = function(grunt) {
           }
         },
         src: ['src/*.js'],
-        dest: 'src/angular-timeline.js'
+        dest: 'dist/angular-timeline.js'
       },
     },
 
     sass: {
       dist: {
         files: {
-          'src/angular-timeline.css':'src/angular-timeline.scss',
-          'src/angular-timeline-bootstrap.css':'src/angular-timeline-bootstrap.scss'
+          'dist/angular-timeline.css':'dist/angular-timeline.scss',
+          'dist/angular-timeline-bootstrap.css':'dist/angular-timeline-bootstrap.scss'
         }
       }
     },
@@ -115,7 +115,7 @@ module.exports = function(grunt) {
   grunt.registerTask('serve', ['build','connect', 'watch']);
 
   grunt.registerTask('build', [
-    'clean', 'sass', 'jsbeautifier', 'jshint', 'concat', //'karma'
+    'clean', 'sass', 'jsbeautifier', 'jshint', 'concat' //'karma'
   ]);
 
   grunt.registerTask('default', [
