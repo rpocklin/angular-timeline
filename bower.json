@@ -7,7 +7,13 @@
     "dist/angular-timeline.css"
   ],
   "keywords": [
-    "angular", "timeline", "history", "events", "list", "responsive", "bootstrap"
+    "angular",
+    "timeline",
+    "history",
+    "events",
+    "list",
+    "responsive",
+    "bootstrap"
   ],
   "ignore": [
     "**/.*",
@@ -34,5 +40,8 @@
     "underscore": "~1.7.0",
     "jquery": "~2.1.1",
     "bootstrap": "~3.2.0"
+  },
+  "resolutions": {
+    "angular": "^1.2.26"
   }
 }
