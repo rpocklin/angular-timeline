@@ -1,7 +1,6 @@
 {
   "name": "angular-timeline",
   "description": "An Angular.js directive that generates a responsive, data-driven vertical timeline to tell a story, show history or describe a sequence of events.",
-  "keywords": "angular, timeline, history, list, bootstrap",
   "homepage":"https://github.com/rpocklin/angular-timeline",
   "author":"Robert Pocklington <rpocklin@gmail.com>",
   "repository": {
