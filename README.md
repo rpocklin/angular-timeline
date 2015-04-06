@@ -26,11 +26,11 @@ show history or describe a sequence of events.
 
 1. Include `angular-timeline.css` in your app:
 
-  `<link rel="stylesheet" href="bower_components/angular-timeline/angular-timeline.css" />`
+  `<link rel="stylesheet" href="bower_components/angular-timeline/src/angular-timeline.css" />`
 
 1. Include `angular-timeline.js` in your app:
 
-  `<script src="bower_components/angular-timeline/angular-timeline.js"></script>`
+  `<script src="bower_components/angular-timeline/src/angular-timeline.js"></script>`
 
 1. Add `angular-timeline` as a new module dependency in your angular app.
 
