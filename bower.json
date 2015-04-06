@@ -2,7 +2,10 @@
   "name": "angular-timeline",
   "version": "1.2.1",
   "license": "MIT",
-  "main": "src/angular-timeline.js",
+  "main": [
+    "dist/angular-timeline.js",
+    "dist/angular-timeline.css"
+  ],
   "keywords": [
     "angular", "timeline", "history", "events", "list", "responsive", "bootstrap"
   ],

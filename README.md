@@ -86,7 +86,7 @@ I had also added an optional `<timeline-footer>` to go after `<timeline-content>
 
 - You can use either the SASS styles directly file under `/dist` or the compiled CSS files, up to you :)
 
-- If you are using Bootstrap 3 it affects the timeline CSS, so include `angular-timeline-bootstrap.[css|scss]}` instead to re-adjust the offsets e.g:
+- If you are using Bootstrap 3 it affects the timeline CSS, so include `angular-timeline-bootstrap.[css|scss]}` as well to re-adjust the offsets e.g:
 
 ```html
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
