@@ -38,7 +38,7 @@ show history or describe a sequence of events.
 
 1. To define a timeline, do the following (either manually or using ng-repeat on a dataset):
 
-  ```
+  ```html
     <timeline>
       <timeline-node side="left">
         <timeline-badge class="info"><i class="glyphicon glyphicon-check"></i>
