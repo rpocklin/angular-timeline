@@ -17,6 +17,9 @@ show history or describe a sequence of events.
 [3](http://bootsnipp.com/snippets/featured/single-column-timeline)
 [4](http://bootsnipp.com/snippets/featured/timeline-with-images-and-tooltip)
 [5](http://bootsnipp.com/snippets/featured/timeline-dotted)
+[6](http://codyhouse.co/demo/vertical-timeline/index.html)
+
+http://codyhouse.co/gem/vertical-timeline/
 
 ## Installation
 
@@ -26,7 +29,7 @@ show history or describe a sequence of events.
 
 1. Include `angular-timeline.css` in your app:
 
-  `<link rel="stylesheet" href="bower_components/angular-timeline/dist/angular-timeline.css" />`
+  `<link rel="stylesheet" href="bower_components/angular-timeline/dist/angular-timeline.css"/>`
 
 1. Include `angular-timeline.js` in your app:
 
@@ -40,7 +43,7 @@ show history or describe a sequence of events.
 
   ```html
     <timeline>
-      <timeline-node side="left">
+      <timeline-event side="left">
         <timeline-badge class="info"><i class="glyphicon glyphicon-check"></i>
         </timeline-badge>
         <timeline-panel>
@@ -50,12 +53,10 @@ show history or describe a sequence of events.
               <small class="text-muted"><i class="glyphicon glyphicon-time"></i> 11 hours ago via Twitter</small>
             </p>
           </timeline-heading>
-          <timeline-content>
-            <p>Twitter post goes here</p>
-          </timeline-content>
+          <p>Twitter post goes here</p>
         </timeline-panel>
-      </timeline-node>
-      <timeline-node side="right">
+      </timeline-event>
+      <timeline-event side="right">
         <timeline-badge class="warning"><i class="glyphicon glyphicon-credit-card"></i>
         </timeline-badge>
         <timeline-panel>
@@ -65,11 +66,9 @@ show history or describe a sequence of events.
               <small class="text-muted">12 hours ago via Twitter</small>
             </p>
           </timeline-heading>
-          <timeline-content>
-            <p>Another twitter post goes here</p>
-          </timeline-content>
+          <p>Another twitter post goes here</p>
         </timeline-panel>
-      </timeline-node>
+      </timeline-event>
     </timeline>
   ```
 
@@ -82,7 +81,7 @@ I had also added an optional `<timeline-footer>` to go after `<timeline-content>
 
 ## Notes
 
-- You can use the `side=left` or `side=right` attribute on the `<timeline-node>` element to float the timeline panels left or right accordingly. (when < 768px in width it will push all `<timeline-node>` elements to the right).
+- You can use the `side=left` or `side=right` attribute on the `<timeline-event>` element to float the timeline panels left or right accordingly. (when < 768px in width it will push all `<timeline-event>` elements to the right).
 
 - You can use either the SASS styles directly file under `/dist` or the compiled CSS files, up to you :)
 

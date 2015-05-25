@@ -4,9 +4,11 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     jasmine_node: {
-      forceExit: true,
-      isVerbose: false,
-      projectRoot: 'spec'
+      options: {
+        forceExit: true,
+        isVerbose: false
+      },
+      all: ['spec/']
     },
 
     jshint: {

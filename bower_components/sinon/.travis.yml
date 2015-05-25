@@ -1,7 +1,24 @@
 language: node_js
 node_js:
-  - 0.6
-  - 0.8
+  - "0.6"
+  - "0.8"
   - "0.10"
+  - "0.12"
+
+sudo: false
+
 before_install:
-  - "npm config set strict-ssl false"
+  - npm config set strict-ssl false
+  # use a more modern npm than ships with 0.6 and 0.8
+  - 'if [ "x$TRAVIS_NODE_VERSION" = "x0.6" ]; then npm install -g npm@1.3; fi'
+  - 'if [ "x$TRAVIS_NODE_VERSION" = "x0.8" ]; then npm install -g npm@1.4; fi'
+
+before_script:
+  - 'if [ "x$TRAVIS_NODE_VERSION" != "x0.6" ]; then $(npm bin)/jscs .; fi'
+
+script:
+  - npm test
+  - "./test/phantom/run.sh"
+
+git:
+  depth: 10

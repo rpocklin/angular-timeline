@@ -1,5 +1,3 @@
-/*jslint onevar: false, browser: false, regexp: false, browser: true*/
-/*globals sinon window buster*/
 /**
  * @author Christian Johansen (christian@cjohansen.no)
  * @license BSD
@@ -39,7 +37,7 @@ buster.testCase("sinon.fakeServer", {
         assert(restore.called);
     }),
 
-    "requests": {
+    ".requests": {
         setUp: function () {
             this.server = sinon.fakeServer.create();
         },
@@ -80,7 +78,7 @@ buster.testCase("sinon.fakeServer", {
         }
     },
 
-    "handleRequest": {
+    ".handleRequest": {
         setUp: function () {
             this.server = sinon.fakeServer.create();
         },
@@ -110,8 +108,10 @@ buster.testCase("sinon.fakeServer", {
         }
     },
 
-    "respondWith": {
+    ".respondWith": {
         setUp: function () {
+            this.sandbox = sinon.sandbox.create();
+
             this.server = sinon.fakeServer.create();
 
             this.getRootAsync = new sinon.FakeXMLHttpRequest();
@@ -140,6 +140,7 @@ buster.testCase("sinon.fakeServer", {
 
         tearDown: function () {
             this.server.restore();
+            this.sandbox.restore();
         },
 
         "responds to queued async requests": function () {
@@ -351,6 +352,8 @@ buster.testCase("sinon.fakeServer", {
         },
 
         "notifies all requests when some throw": function () {
+            this.sandbox.stub(sinon, "logError"); // reduce console spam in the test runner
+
             this.getRootAsync.respond = function () {
                 throw new Error("Oops!");
             };
@@ -422,7 +425,7 @@ buster.testCase("sinon.fakeServer", {
         }
     },
 
-    "respondWithFunctionHandler": {
+    ".respondWith (FunctionHandler)": {
         setUp: function () {
             this.server = sinon.fakeServer.create();
         },
@@ -446,7 +449,7 @@ buster.testCase("sinon.fakeServer", {
 
         "responds to request from function handler": function () {
             this.server.respondWith("/hello", function (xhr) {
-                xhr.respond(200, { "Content-Type": "application/json" }, '{"id":42}');
+                xhr.respond(200, { "Content-Type": "application/json" }, "{\"id\":42}");
             });
 
             var request = new sinon.FakeXMLHttpRequest();
@@ -457,7 +460,7 @@ buster.testCase("sinon.fakeServer", {
 
             assert.equals(request.status, 200);
             assert.equals(request.responseHeaders, { "Content-Type": "application/json" });
-            assert.equals(request.responseText, '{"id":42}');
+            assert.equals(request.responseText, "{\"id\":42}");
         },
 
         "yields response to request function handler when method matches": function () {
@@ -522,7 +525,7 @@ buster.testCase("sinon.fakeServer", {
 
         "adds function handler without method or url filter": function () {
             this.server.respondWith(function (xhr) {
-                xhr.respond(200, { "Content-Type": "application/json" }, '{"id":42}');
+                xhr.respond(200, { "Content-Type": "application/json" }, "{\"id\":42}");
             });
 
             var request = new sinon.FakeXMLHttpRequest();
@@ -533,7 +536,7 @@ buster.testCase("sinon.fakeServer", {
 
             assert.equals(request.status, 200);
             assert.equals(request.responseHeaders, { "Content-Type": "application/json" });
-            assert.equals(request.responseText, '{"id":42}');
+            assert.equals(request.responseText, "{\"id\":42}");
         },
 
         "does not process request further if processed by function": function () {
@@ -566,7 +569,7 @@ buster.testCase("sinon.fakeServer", {
         }
     },
 
-    "respondFakeHTTPVerb": {
+    "respond with fake HTTP Verb": {
         setUp: function () {
             this.server = sinon.fakeServer.create();
 
@@ -639,7 +642,7 @@ buster.testCase("sinon.fakeServer", {
         }
     },
 
-    "autoResponse": {
+    ".autoResponse": {
         setUp: function () {
             this.get = function get(url) {
                 var request = new sinon.FakeXMLHttpRequest();
@@ -740,6 +743,71 @@ buster.testCase("sinon.fakeServer", {
             this.clock.tick(10);
 
             assert.isTrue(request.respond.calledOnce);
+        }
+    },
+
+    ".respondImmediately": {
+        setUp: function () {
+            this.get = function get(url) {
+                var request = new sinon.FakeXMLHttpRequest();
+                sinon.spy(request, "respond");
+                request.open("get", url, true);
+                request.send();
+                return request;
+            };
+
+            this.server = sinon.fakeServer.create();
+            this.server.respondImmediately = true;
+        },
+
+        tearDown: function () {
+            this.server.restore();
+        },
+
+        "responds synchronously": function () {
+            var request = this.get("/path");
+            assert.isTrue(request.respond.calledOnce);
+        },
+
+        "doesn't rely on a clock": function () {
+            this.clock = sinon.useFakeTimers();
+
+            var request = this.get("/path");
+            assert.isTrue(request.respond.calledOnce);
+
+            this.clock.restore();
+        }
+    },
+
+    ".log": {
+        setUp: function () {
+            this.server = sinon.fakeServer.create();
+        },
+
+        tearDown: function () {
+            this.server.restore();
+        },
+
+        "logs response and request": function () {
+            sinon.spy(this.server, "log");
+            var xhr = new sinon.FakeXMLHttpRequest();
+            xhr.open("GET", "/hello");
+            xhr.send();
+            var response = [200, {}, "Hello!"];
+            this.server.respond("GET", /.*/, response);
+            assert(this.server.log.calledOnce);
+            assert(this.server.log.calledWithExactly(response, xhr));
+        },
+
+        "can be overridden": function () {
+            this.server.log = sinon.spy();
+            var xhr = new sinon.FakeXMLHttpRequest();
+            xhr.open("GET", "/hello");
+            xhr.send();
+            var response = [200, {}, "Hello!"];
+            this.server.respond("GET", /.*/, response);
+            assert(this.server.log.calledOnce);
+            assert(this.server.log.calledWithExactly(response, xhr));
         }
     }
 });

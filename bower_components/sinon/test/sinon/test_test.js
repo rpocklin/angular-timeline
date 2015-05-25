@@ -1,5 +1,3 @@
-/*jslint onevar: false, eqeqeq: false, browser: true*/
-/*globals sinon, buster*/
 /**
  * @author Christian Johansen (christian@cjohansen.no)
  * @license BSD
@@ -76,7 +74,7 @@ buster.testCase("sinon.test", {
         assert.same(object.method, method);
     },
 
-    "restores stubs on all object methods": function() {
+    "restores stubs on all object methods": function () {
         var method = function () {};
         var method2 = function () {};
         var object = { method: method, method2: method2 };
@@ -126,6 +124,69 @@ buster.testCase("sinon.test", {
         }).call({});
     },
 
+    "async test with sandbox": function (done) {
+        var fakeDone = function (args) {
+            assert.equals(args, undefined);
+            done(args);
+        }
+        sinon.test(function (callback) {
+
+            buster.nextTick(function () {
+                callback();
+            });
+        }).call({}, fakeDone);
+    },
+
+    "async test with sandbox using mocha interface": function (done) {
+        var it = function (title, fn) {
+            var mochaDone = function (args) {
+                assert.equals(args, undefined);
+                done(args);
+            };
+            if (fn.length) {
+                fn.call(this, mochaDone);
+            } else {
+                fn.call(this);
+            }
+        };
+        it("works", sinon.test(function (callback) {
+            buster.nextTick(function () {
+                callback();
+            });
+        }));
+    },
+
+    "async test with sandbox and spy": function (done) {
+        sinon.test(function (callback) {
+            var globalObj = {
+                addOne: function (arg) {
+                    return this.addOneInner(arg);
+                },
+                addOneInner: function (arg) {
+                    return arg + 1;
+                }
+            };
+            var addOneInnerSpy = this.spy();
+            this.stub(globalObj, "addOneInner", addOneInnerSpy);
+
+            buster.nextTick(function () {
+                var result = globalObj.addOne(41);
+                assert(addOneInnerSpy.calledOnce);
+                callback();
+            });
+        }).call({}, done);
+    },
+
+    "async test preserves additional args and pass them in correct order": function (done) {
+        sinon.test(function (arg1, arg2, callback) {
+            assert.equals(arg1, "arg1");
+            assert.equals(typeof (arg2), "object");
+            assert.equals(typeof (callback), "function");
+
+            callback();
+        }).call({}, "arg1", {}, done);
+    },
+
     "verifies mocks": function () {
         var method = function () {};
         var object = { method: method };
@@ -137,7 +198,7 @@ buster.testCase("sinon.test", {
                 object.method(42);
             }).call({});
         } catch (e) {
-          exception = e;
+            exception = e;
         }
 
         assert.same(exception.name, "ExpectationError");
