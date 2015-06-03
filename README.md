@@ -3,13 +3,19 @@
 An Angular.js directive that generates a responsive, data-driven vertical timeline to tell a story, 
 show history or describe a sequence of events.
 
-# Demo / Example
+[![Build Status](https://secure.travis-ci.org/rpocklin/angular-timeline.svg)](http:/travis-ci.org/rpocklin/angular-timeline)
+
+# Demo
 
 [Demo](http://rpocklin.github.io/angular-timeline/example/index.html)
 
 [Demo without bootstrap](http://rpocklin.github.io/angular-timeline/example/index-no-bootstrap.html)
 
 [Original Implementation (HTML / Javascript)](http://bootsnipp.com/snippets/featured/timeline-responsive)
+
+# NG Docs
+
+[link](http://rpocklin.github.io/angular-timeline/docs/#/api/angular-timeline.directive:timeline)
 
 # Inspiration
 [1](http://bootsnipp.com/snippets/featured/two-column-timeline-not-responsive)
@@ -18,8 +24,6 @@ show history or describe a sequence of events.
 [4](http://bootsnipp.com/snippets/featured/timeline-with-images-and-tooltip)
 [5](http://bootsnipp.com/snippets/featured/timeline-dotted)
 [6](http://codyhouse.co/demo/vertical-timeline/index.html)
-
-http://codyhouse.co/gem/vertical-timeline/
 
 ## Installation
 
@@ -41,51 +45,51 @@ http://codyhouse.co/gem/vertical-timeline/
 
 1. To define a timeline, do the following (either manually or using ng-repeat on a dataset):
 
-  ```html
-    <timeline>
-      <timeline-event side="left">
-        <timeline-badge class="info"><i class="glyphicon glyphicon-check"></i>
-        </timeline-badge>
-        <timeline-panel>
-          <timeline-heading>
-            <timeline-title>Some twitter post</timeline-title>
-            <p>
-              <small class="text-muted"><i class="glyphicon glyphicon-time"></i> 11 hours ago via Twitter</small>
-            </p>
-          </timeline-heading>
-          <p>Twitter post goes here</p>
-        </timeline-panel>
-      </timeline-event>
-      <timeline-event side="right">
-        <timeline-badge class="warning"><i class="glyphicon glyphicon-credit-card"></i>
-        </timeline-badge>
-        <timeline-panel>
-          <timeline-heading>
-            <timeline-title>Another twitter post</timeline-title>
-            <p>
-              <small class="text-muted">12 hours ago via Twitter</small>
-            </p>
-          </timeline-heading>
-          <p>Another twitter post goes here</p>
-        </timeline-panel>
-      </timeline-event>
-    </timeline>
+  ```javascript
+  
+    // in controller
+    $scope.events = [{
+      badgeClass: 'info',
+      badgeIconClass: 'glyphicon-check',
+      title: 'First heading',
+      content: 'Some awesome content.'
+    }, {
+      badgeClass: 'warning',
+      badgeIconClass: 'glyphicon-credit-card',
+      title: 'Second heading',
+      content: 'More awesome content.'
+    }];
   ```
 
-Yes, there is a bit of markup here, but `<timeline-content>` and `<timeline-heading>` are optional.
+  ```html
+  
+    <!-- view -->
+    <timeline-event ng-repeat="event in events">
+      <timeline-badge class="{{event.badgeClass}}">
+        <i class="glyphicon {{event.badgeIconClass}}"></i>
+      </timeline-badge>
+      <timeline-panel class="{{event.badgeClass}}">
+        <timeline-heading>
+          <h4>{{event.title}}</h4>
+        </timeline-heading>
+        <p>{{event.content}}</p>
+      </timeline-panel>
+    </timeline-event>
+  ```
 
-`timeline-badge` is for the centre line between the two sides, and should represent the event type that occured.
-
-I had also added an optional `<timeline-footer>` to go after `<timeline-content>` for links and other info.
-
+There is a bit of markup here but `<timeline-heading>` is optional.
+`<timeline-badge>` is for the centre line between the two sides, and should represent the event type that occured.
 
 ## Notes
 
-- You can use the `side=left` or `side=right` attribute on the `<timeline-event>` element to float the timeline panels left or right accordingly. (when < 768px in width it will push all `<timeline-event>` elements to the right).
+- The demo uses [angular-scroll-animate](https://github.com/rpocklin/angular-scroll-animate) to trigger CSS animations when timeline events scroll into view.  It's totally optional to include this or not and is just there for effect.
+
+- Panels are now designed to float left, then right, side to side.  Float right is forced on smaller (eg. mobile) devices.
+- If you define the events in an array and have HTML content to output, use `ng-bind-html={{event.attribute}}` and require the `ngSanitize` module.
 
 - You can use either the SASS styles directly file under `/dist` or the compiled CSS files, up to you :)
 
-- If you are using Bootstrap 3 it affects the timeline CSS, so include `angular-timeline-bootstrap.[css|scss]}` as well to re-adjust the offsets e.g:
+- If you are using Bootstrap 3 it affects the timeline CSS, so include `angular-timeline-bootstrap.[css|scss]}` to re-adjust the offsets e.g:
 
 ```html
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
@@ -114,6 +118,7 @@ I had also added an optional `<timeline-footer>` to go after `<timeline-content>
 
 ## History
 
+* 1.5.0 Updated dependencies, simplified nested components and improved example.  Changed `timeline-node` to `timeline-event`. Removed `replace = true` in directives.
 * 1.2.1 Cleaned up dependencies and build steps.
 * 1.2.0 Updated example and styling to be more responsive.
 * 1.0.0 Initial release
@@ -122,7 +127,6 @@ I had also added an optional `<timeline-footer>` to go after `<timeline-content>
 ## TODO
 
 - Add some tests
-- Add some examples with ng-repeat based on JSON datasets.
 
 ## Thanks
 *luisrudge* for the original vanilla JS implementation on [Bootsnipp](http://bootsnipp.com/snippets/featured/timeline-responsive)

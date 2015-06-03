@@ -1,48 +1,29 @@
 <div class="container-fluid">
   <h1>Angular Timeline</h1>
   <timeline>
-    <timeline-event side="left">
-      <timeline-badge class="info"><i class="glyphicon glyphicon-check"></i>
+    <timeline-event ng-repeat="event in events">
+
+      <!-- uses angular-scroll-animate to give it some pop -->
+      <timeline-badge class="{{event.badgeClass}} hidden"
+                      when-visible="animateElementIn" when-not-visible="animateElementOut">
+	      <i class="glyphicon {{event.badgeIconClass}}"></i>
       </timeline-badge>
-      <timeline-panel>
+
+		  <!-- uses angular-scroll-animate to give it some pop -->
+      <timeline-panel class="{{event.badgeClass}} hidden"
+                      when-visible="animateElementIn" when-not-visible="animateElementOut">
         <timeline-heading>
-          <timeline-title>Some heading</timeline-title>
-          <p>
-            <small class="text-muted"><i class="glyphicon glyphicon-time"></i> 11 hours ago via Twitter</small>
+          <h4>{{event.title}}</h4>
+          <p ng-if="event.when">
+            <small class="text-muted"><i class="glyphicon glyphicon-time"></i>{{event.when}}</small>
           </p>
+	        <p ng-if="event.titleContentHtml" ng-bind-html="event.titleContentHtml">
+	        </p>
         </timeline-heading>
-        <p>blah blah blah</p>
-      </timeline-panel>
-    </timeline-event>
-    <timeline-event side="right">
-      <timeline-badge class="warning"><i class="glyphicon glyphicon-credit-card"></i>
-      </timeline-badge>
-      <timeline-panel>
-        <timeline-heading>
-          <timeline-title>Some heading</timeline-title>
-          <p>
-            <small class="text-muted"><i class="glyphicon glyphicon-time"></i> 12 hours ago via Twitter</small>
-          </p>
-        </timeline-heading>
-        <p>blah blah blah</p>
-      </timeline-panel>
-    </timeline-event>
-    <timeline-event side="left">
-      <timeline-badge class="info"><i class="glyphicon glyphicon-check"></i>
-      </timeline-badge>
-      <timeline-panel>
-        <timeline-heading>
-          <timeline-title>Some heading</timeline-title>
-          <img class="img-responsive" src="http://www.freeimages.com/assets/183333/1833326510/wood-weel-1444183-m.jpg">
-        </timeline-heading>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.
-           Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor.
-           Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.
-           Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
-        <timeline-footer>
-          <a href="">Continue Reading</a>
-        </timeline-footer>
+	      <p ng-bind-html="event.contentHtml"></p>
+	      <timeline-footer ng-if="event.footerContentHtml">
+		      <span ng-bind-html="event.footerContentHtml"></span>
+				</timeline-footer>
       </timeline-panel>
     </timeline-event>
   </timeline>

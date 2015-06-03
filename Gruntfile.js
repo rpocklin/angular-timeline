@@ -2,6 +2,8 @@
 
 module.exports = function(grunt) {
 
+	var moduleName = 'angular-timeline';
+
 	var beautifyFiles = ['!Gruntfile.js', '!npm-shrinkwrap.json', 'src/**/*.{html,js}', '!app/bower_components/**/*'];
 
 	// Load grunt tasks automatically
@@ -21,7 +23,7 @@ module.exports = function(grunt) {
     watch: {
            scripts: {
                     files: ['src/**/*'],
-                    tasks: ['build'],
+                    tasks: ['beautify', 'build'],
                     options: {
                              spawn: false
                     }
@@ -29,14 +31,14 @@ module.exports = function(grunt) {
 
     },
 
-    clean: ['dist/*.js'],
+    clean: ['dist/', 'docs/'],
 
     concat: {
       dist: {
         // Replace all 'use strict' statements in the code with a single one at the top
         options: {
 
-          banner: "'use strict';\nangular.module('angular-timeline', []);",
+          banner: "'use strict';\nangular.module('" + moduleName + "', []);",
           process: function(src, filepath) {
             return '// Source: ' + filepath + '\n' +
             src.replace(/(^|\n)[ \t]*('use strict'|"use strict");?\s*/g, '$1');
@@ -44,17 +46,32 @@ module.exports = function(grunt) {
         },
         src: ['src/*.js'],
         dest: 'dist/angular-timeline.js'
-      },
+      }
     },
 
     sass: {
       dist: {
         files: {
-          'dist/angular-timeline.css':'dist/angular-timeline.scss',
-          'dist/angular-timeline-bootstrap.css':'dist/angular-timeline-bootstrap.scss'
+          'dist/angular-timeline.css':'src/angular-timeline.scss',
+          'dist/angular-timeline-bootstrap.css':'src/angular-timeline-bootstrap.scss',
+          'dist/angular-timeline-animations.css':'src/angular-timeline-animations.scss'
         }
       }
     },
+
+	  ngdocs: {
+
+		  options: {
+		    dest: 'docs',
+		    html5Mode: false,
+		    title: 'Angular Timeline',
+			  startPage: '/api/timeline'
+		  },
+		  api: {
+		  	 src: ['dist/**/*.js'],
+		  	 title: 'API'
+		  }
+	  },
 
 	  // verifies we have formatted our js and HTML according to our style conventions
 	  jsbeautifier: {
@@ -108,7 +125,7 @@ module.exports = function(grunt) {
   grunt.registerTask('serve', ['build','connect', 'watch']);
 	grunt.registerTask('beautify', ['jsbeautifier:update']);
   grunt.registerTask('build', [
-    'clean', 'sass', 'jsbeautifier:verify', 'jshint', 'concat' //'karma'
+    'clean', 'sass', 'jsbeautifier:verify', 'jshint', 'concat', 'ngdocs' //'karma'
   ]);
 
   grunt.registerTask('default', [

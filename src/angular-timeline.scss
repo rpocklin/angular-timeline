@@ -1,56 +1,65 @@
 $top: 35px;
-$pointer-margin: -5px;
+$pointerMargin: -5px;
+$anchorTextColor: #fff;
+$panelBackgroundColor: #fff;
+$panelBorderColor: #ccc;
+$anchorBgColor: #acb7c0;
+$timelineCenterColor: #cccccc;
 
 .timeline {
   padding: 0;
   list-style: none;
-//  padding: 20px 0 20px;
-//  padding: 10px;
-//  padding: 0;
   position: relative;
 }
 
+// center line
 .timeline:before {
   top: 0;
   bottom: 0;
   position: absolute;
   content: " ";
   width: 3px;
-  background-color: #eeeeee;
+  background-color: $timelineCenterColor;
   left: 50%;
   margin-left: -1.5px;
 }
 
 
-// li is timeline-node
-
+// li is timeline-event
 .timeline li {
   margin-bottom: 20px;
   position: relative;
 
   .timeline-footer {
     margin-top: 10px;
-    padding: 10px;
-    background-color: #f4f4f4;
+    padding: 10px 0;
+
+    a {
+      color: $anchorTextColor;
+      background-color: $anchorBgColor;
+      border-radius: 0.25em;
+      padding: 0.8em 1em;
+      margin: 0;
+    }
   }
 
-  timeline-badge.primary .timeline-badge {
+  timeline-badge.primary {
     background-color: #2e6da4 !important;
   }
 
-  timeline-badge.success .timeline-badge {
+  timeline-badge.success {
     background-color: #3f903f !important;
   }
 
-  timeline-badge.warning .timeline-badge {
+  timeline-badge.warning {
     background-color: #f0ad4e !important;
   }
 
-  timeline-badge.danger .timeline-badge {
+  timeline-badge.danger {
     background-color: #d9534f !important;
   }
 
-  timeline-badge.info .timeline-badge {
+  timeline-badge.info {
     background-color: #5bc0de !important;
   }
 
@@ -58,11 +67,12 @@ $pointer-margin: -5px;
     margin-top: 0;
   }
 
-  .timeline-panel > * {
+  timeline-panel > * {
     margin: 0;
   }
 
-  .timeline-panel {
+  timeline-panel {
+    background-color: $panelBackgroundColor;
     float: left;
     border: 1px solid #d4d4d4;
     border-radius: 2px;
@@ -72,31 +82,32 @@ $pointer-margin: -5px;
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
   }
 
-  .timeline-panel:before {
+  timeline-panel:before {
     position: absolute;
     top: $top;
     right: -15px;
     display: inline-block;
     border-top: 15px solid transparent;
-    border-left: 15px solid #ccc;
-    border-right: 0 solid #ccc;
+    border-left: 15px solid $panelBorderColor;
+    border-right: 0 solid $panelBorderColor;
     border-bottom: 15px solid transparent;
     content: " ";
   }
 
-  .timeline-panel:after {
+  timeline-panel:after {
     position: absolute;
     top: $top + 1;
     right: -14px;
     display: inline-block;
     border-top: 14px solid transparent;
-    border-left: 14px solid #fff;
-    border-right: 0 solid #fff;
+    border-left: 14px solid $panelBackgroundColor;
+    border-right: 0 solid $panelBackgroundColor;
     border-bottom: 14px solid transparent;
     content: " ";
   }
 
-  .timeline-badge {
+  timeline-badge {
+    box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
     color: #fff;
     width: 50px;
     height: 50px;
@@ -115,22 +126,29 @@ $pointer-margin: -5px;
     border-bottom-left-radius: 50%;
   }
 
-  &.timeline-inverted .timeline-panel {
+  &.timeline-inverted timeline-panel {
     float: right;
   }
 
-  &.timeline-inverted .timeline-panel:before {
+  &.timeline-inverted timeline-panel:before {
     border-left-width: 0;
     border-right-width: 15px;
     left: -15px;
     right: auto;
   }
 
-  &.timeline-inverted .timeline-panel:after {
+  &.timeline-inverted timeline-panel:after {
     border-left-width: 0;
     border-right-width: 14px;
     left: -14px;
     right: auto;
+  }
+}
+
+.timeline-heading {
+  .glyphicon {
+    margin-right: 4px;
+    vertical-align: -1px;
   }
 }
 
@@ -155,10 +173,10 @@ $pointer-margin: -5px;
 }
 
 @media only screen and (min-width: 768px) {
-  ul.timeline li .timeline-panel {
-    width: calc(50% - 70px);
-    width: -moz-calc(50% - 70px);
-    width: -webkit-calc(50% - 70px);
+  ul.timeline li timeline-panel {
+    width: calc(50% - 45px);
+    width: -moz-calc(50% - 45px);
+    width: -webkit-calc(50% - 45px);
   }
 }
 
@@ -168,23 +186,23 @@ $pointer-margin: -5px;
     left: 40px;
   }
 
-  ul.timeline li .timeline-panel {
-    width: calc(100% - 110px);
-    width: -moz-calc(100% - 110px);
-    width: -webkit-calc(100% - 110px);
+  ul.timeline li timeline-panel {
+    width: calc(100% - 85px);
+    width: -moz-calc(100% - 85px);
+    width: -webkit-calc(100% - 85px);
   }
 
-  ul.timeline li .timeline-badge {
+  ul.timeline li timeline-badge {
     left: 15px;
     margin-left: 0;
     top: $top + 1;
   }
 
-  ul.timeline li .timeline-panel {
+  ul.timeline li timeline-panel {
     float: right;
   }
 
-  ul.timeline li .timeline-panel:before {
+  ul.timeline li timeline-panel:before {
     border-left-width: 0;
     border-right-width: 15px;
     left: -15px;
@@ -192,7 +210,7 @@ $pointer-margin: -5px;
     top: $top + 11px;
   }
 
-  ul.timeline li .timeline-panel:after {
+  ul.timeline li timeline-panel:after {
     border-left-width: 0;
     border-right-width: 14px;
     left: -14px;
