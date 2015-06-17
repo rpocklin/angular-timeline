@@ -2,16 +2,21 @@
 
 An Angular.js directive which allows you to perform any javascript actions (in the controller, or on the element) when an element is scrolled into or out of, the users viewport, without requiring any other dependencies.
 
+[![Build Status](https://secure.travis-ci.org/rpocklin/angular-scroll-animate.svg)](http:/travis-ci.org/rpocklin/angular-scroll-animate)
+
 # Motivation
 
 `ngAnimate` is great if you want animations based on showing or hiding elements based on some behaviour, but what if you want to trigger behaviour when an element is scrolled into, or out of the user's view?
 
-The goal of this directive is to be small and focused around behaviour that changes when scrolled in and out of view, without requiring jQuery.  You can add / remove CSS classes in the callbacks, or execute any arbitrary javascript you want, such as pre-loading of data, images or anything else.
+The goal of this directive is to be small and focused around behaviour that changes when scrolled in and out of view, without requiring jQuery.  You can add / remove CSS classes in the callbacks, or execute any arbitrary javascript you want such as pre-loading of data, images or anything else.
 
-# Demo / Example
+# Demo
 
 [Demo](http://rpocklin.github.io/angular-scroll-animate/example/index.html)
 
+# NG Docs
+
+[link](http://rpocklin.github.io/angular-scroll-animate/docs/#/api/angular-scroll-animate.directive:when-visible)
 
 # Inspiration
 - [ngAnimate](https://docs.angularjs.org/api/ngAnimate)
@@ -93,14 +98,17 @@ Example markup:
 ## Contributing
 
 1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Added some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+1. Create your feature branch (`git checkout -b my-new-feature`)
+1. Beautify (`grunt beautify`)
+1. Ensure it passes code-checks / tests (`grunt`)
+1. Commit your changes (`git commit -am 'Added some feature'`)
+1. Push to the branch (`git push origin my-new-feature`)
+1. Create a new Pull Request
 
 
 ## History
 
+* 0.9.0 Fixed event unbinding when removing bound elements from the DOM.
 * 0.8.0 Initial release
 
 

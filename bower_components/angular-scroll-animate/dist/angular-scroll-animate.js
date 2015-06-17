@@ -7,6 +7,32 @@ angular.module('angular-scroll-animate', []);// Source: src/angular-scroll-anima
  *
  * @description
  * Allows method hooks into the detection of when an element is scrolled into or out of view.
+ *
+ * @example
+ * <example module="angular-scroll-animate">
+ *   <file name="index.html">
+ *     <div ng-controller="ExampleCtrl" class="car" when-visible="animateIn" when-not-visible="animateOut">Broom</div>
+ *   </file>
+ *   <file name="controller.js">
+ *   angular.module('example', []).controller('ExampleCtrl', function($scope) {
+ *
+ *     $scope.animateIn = function($el) {
+ *       $el.removeClass('hidden');
+ *       $el.addClass('fadeIn');
+ *     };
+ *
+ *     $scope.animateOut = function($el) {
+ *      $el.addClass('hidden');
+ *       $el.removeClassClass('fadeIn');
+ *     };
+ *   });
+ *
+ *   </file>
+ *   <file name="animations.css">
+ *     .hidden { visibility: hidden; }
+ *     .fadeIn { transition: all 300ms ease-in 2s; }
+ *   </file>
+ * </example>
  */
 angular.module('angular-scroll-animate', []).directive('whenVisible', ['$document', '$window',
  function($document, $window) {
@@ -77,11 +103,20 @@ angular.module('angular-scroll-animate', []).directive('whenVisible', ['$documen
             scope.whenVisible(), scope.whenNotVisible(), delayPercent, scope);
         };
 
-        var unbindDocumentEvents = $document.on('scroll', onScroll);
-        var unbindWindowEvents = angular.element($window).on('resize orientationchange', onScroll);
+        var documentListenerEvents = 'scroll.angularScrollAnimate';
+        $document.on(documentListenerEvents, onScroll);
 
-        scope.$on('$destroy', unbindDocumentEvents);
-        scope.$on('$destroy', unbindWindowEvents);
+        scope.$on('$destroy', function() {
+          $document.off(documentListenerEvents);
+        });
+
+        var $elWindow = angular.element($window);
+        var windowListenerEvents = 'resize.angularScrollAnimate orientationchange.angularScrollAnimate';
+        $elWindow.on(windowListenerEvents, onScroll);
+
+        scope.$on('$destroy', function() {
+          $elWindow.off(windowListenerEvents);
+        });
 
         // initialise
         el.data('hidden', true);

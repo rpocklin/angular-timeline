@@ -110,14 +110,17 @@ There is a bit of markup here but `<timeline-heading>` is optional.
 ## Contributing
 
 1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Added some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+1. Create your feature branch (`git checkout -b my-new-feature`)
+1. Beautify (`grunt beautify`)
+1. Ensure it passes code-checks / tests (`grunt`)
+1. Commit your changes (`git commit -am 'Added some feature'`)
+1. Push to the branch (`git push origin my-new-feature`)
+1. Create a new Pull Request
 
 
 ## History
 
+* 1.5.1 Updated dependency used in example `angular-scroll-animate` from 0.8.0 to 0.9.0.
 * 1.5.0 Updated dependencies, simplified nested components and improved example.  Changed `timeline-node` to `timeline-event`. Removed `replace = true` in directives.
 * 1.2.1 Cleaned up dependencies and build steps.
 * 1.2.0 Updated example and styling to be more responsive.
