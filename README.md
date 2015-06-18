@@ -120,7 +120,7 @@ There is a bit of markup here but `<timeline-heading>` is optional.
 
 ## History
 
-* 1.5.1 Updated dependency used in example `angular-scroll-animate` from 0.8.0 to 0.9.0.
+* 1.5.2 Updated dependency used in example `angular-scroll-animate` from 0.8.0 to 0.9.1.
 * 1.5.0 Updated dependencies, simplified nested components and improved example.  Changed `timeline-node` to `timeline-event`. Removed `replace = true` in directives.
 * 1.2.1 Cleaned up dependencies and build steps.
 * 1.2.0 Updated example and styling to be more responsive.
