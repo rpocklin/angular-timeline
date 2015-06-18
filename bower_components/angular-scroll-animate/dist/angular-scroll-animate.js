@@ -103,19 +103,19 @@ angular.module('angular-scroll-animate', []).directive('whenVisible', ['$documen
             scope.whenVisible(), scope.whenNotVisible(), delayPercent, scope);
         };
 
-        var documentListenerEvents = 'scroll.angularScrollAnimate';
+        var documentListenerEvents = 'scroll';
         $document.on(documentListenerEvents, onScroll);
 
         scope.$on('$destroy', function() {
-          $document.off(documentListenerEvents);
+          $document.off(documentListenerEvents, onScroll);
         });
 
         var $elWindow = angular.element($window);
-        var windowListenerEvents = 'resize.angularScrollAnimate orientationchange.angularScrollAnimate';
+        var windowListenerEvents = 'resize orientationchange';
         $elWindow.on(windowListenerEvents, onScroll);
 
         scope.$on('$destroy', function() {
-          $elWindow.off(windowListenerEvents);
+          $elWindow.off(windowListenerEvents, onScroll);
         });
 
         // initialise

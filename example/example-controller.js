@@ -29,6 +29,16 @@ var ExampleCtrl = function($rootScope, $document, $timeout, $scope) {
 		footerContentHtml: '<a href="">Continue Reading</a>'
 	}];
 
+	$scope.addEvent = function() {
+		$scope.events.push({
+			badgeClass: 'info',
+			badgeIconClass: 'glyphicon-check',
+			title: 'First heading',
+			when: '3 hours ago via Twitter',
+			content: 'Some awesome content.'
+		});
+
+	};
 	// optional: not mandatory (uses angular-scroll-animate)
 	$scope.animateElementIn = function($el) {
 		$el.removeClass('hidden');

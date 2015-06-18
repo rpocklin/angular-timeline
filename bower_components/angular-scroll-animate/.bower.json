@@ -1,6 +1,6 @@
 {
   "name": "angular-scroll-animate",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "license": "MIT",
   "main": [
     "dist/angular-scroll-animate.js"
@@ -39,13 +39,13 @@
     "animate.css": "^3.1.0"
   },
   "homepage": "https://github.com/rpocklin/angular-scroll-animate",
-  "_release": "0.9.0",
+  "_release": "0.9.1",
   "_resolution": {
     "type": "version",
-    "tag": "v0.9.0",
-    "commit": "789b0a0ba319215638013acd82bfc35b40b0c0f8"
+    "tag": "v0.9.1",
+    "commit": "f3f0438201a7fc6bd0b6823815a778b39d396067"
   },
   "_source": "git://github.com/rpocklin/angular-scroll-animate.git",
-  "_target": "^0.9.0",
+  "_target": "^0.9.1",
   "_originalSource": "angular-scroll-animate"
 }
