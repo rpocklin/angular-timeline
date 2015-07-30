@@ -64,17 +64,19 @@ show history or describe a sequence of events.
   ```html
   
     <!-- view -->
-    <timeline-event ng-repeat="event in events">
-      <timeline-badge class="{{event.badgeClass}}">
-        <i class="glyphicon {{event.badgeIconClass}}"></i>
-      </timeline-badge>
-      <timeline-panel class="{{event.badgeClass}}">
-        <timeline-heading>
-          <h4>{{event.title}}</h4>
-        </timeline-heading>
-        <p>{{event.content}}</p>
-      </timeline-panel>
-    </timeline-event>
+    <timeline>
+      <timeline-event ng-repeat="event in events">
+        <timeline-badge class="{{event.badgeClass}}">
+          <i class="glyphicon {{event.badgeIconClass}}"></i>
+        </timeline-badge>
+        <timeline-panel class="{{event.badgeClass}}">
+          <timeline-heading>
+            <h4>{{event.title}}</h4>
+          </timeline-heading>
+          <p>{{event.content}}</p>
+        </timeline-panel>
+      </timeline-event>
+    </timeline>
   ```
 
 There is a bit of markup here but `<timeline-heading>` is optional.
