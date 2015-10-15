@@ -5,8 +5,9 @@
   "author": "Robert Pocklington <rpocklin@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "http://github.com/npm/npm.git"
+    "url": "http://github.com/rpocklin/angular-timeline.git"
   },
+  "main": ["src/angular-timeline.js", "src/angular-timeline.css"],
   "keywords": [
     "angular",
     "timeline",
@@ -47,5 +48,8 @@
   },
   "engines": {
     "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "grunt karma"
   }
 }
