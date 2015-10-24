@@ -19,7 +19,7 @@ NG_DOCS={
       "type": "directive",
       "moduleName": "angular-timeline",
       "shortDescription": "Represents an event occuring at a point in time, displayed on the left or the right",
-      "keywords": "ae angular-timeline api directive displayed element embed event left occuring point represents time timeline timeline-badge timeline-event timeline-panel typically"
+      "keywords": "ae angular-timeline api define directive displayed element embed event expression left occuring point represents side time timeline timeline-badge timeline-event timeline-panel typically"
     },
     {
       "section": "api",

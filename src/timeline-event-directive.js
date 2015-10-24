@@ -18,11 +18,11 @@ angular.module('angular-timeline').directive('timelineEvent', function() {
     require: '^timeline',
     restrict: 'AE',
     transclude: true,
-    template: '<li ng-transclude></li>',
+    template: '<li ng-class-even="{\'timeline-inverted\': defaultLayout}" ng-transclude></li>',
     link: function(scope, element, attrs) {
 
-      var liElt = element.find('li');
       if ('undefined' !== typeof attrs.side) {
+        var liElt = element.find('li');
         switch (attrs.side) {
           case 'right':
             liElt.addClass('timeline-inverted');
@@ -30,6 +30,9 @@ angular.module('angular-timeline').directive('timelineEvent', function() {
           default:
             liElt.removeClass('timeline-inverted');
         }
+      }
+      else {
+        scope.defaultLayout = true;
       }
 
     }
