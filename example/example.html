@@ -5,7 +5,7 @@
 	<br/>
 
   <timeline>
-    <timeline-event ng-repeat="event in events">
+    <timeline-event ng-repeat="event in events" data-side="{{$index % 2 ? 'right' : 'left'}}">
 
       <!-- uses angular-scroll-animate to give it some pop -->
       <timeline-badge class="{{event.badgeClass}} timeline-hidden"
