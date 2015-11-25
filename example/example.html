@@ -8,13 +8,13 @@
     <timeline-event ng-repeat="event in events">
 
       <!-- uses angular-scroll-animate to give it some pop -->
-      <timeline-badge class="{{event.badgeClass}} hidden"
+      <timeline-badge class="{{event.badgeClass}} timeline-hidden"
                       when-visible="animateElementIn" when-not-visible="animateElementOut">
 	      <i class="glyphicon {{event.badgeIconClass}}"></i>
       </timeline-badge>
 
 		  <!-- uses angular-scroll-animate to give it some pop -->
-      <timeline-panel class="{{event.badgeClass}} hidden"
+      <timeline-panel class="{{event.badgeClass}} timeline-hidden"
                       when-visible="animateElementIn" when-not-visible="animateElementOut">
         <timeline-heading>
           <h4>{{event.title}}</h4>

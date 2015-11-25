@@ -41,6 +41,6 @@
     "underscore": "^1.7.0",
     "jquery": "^2.1.1",
     "bootstrap": "^3.3.4",
-    "angular-scroll-animate": "^0.9.1"
+    "angular-scroll-animate": "^0.9.8"
   }
 }
