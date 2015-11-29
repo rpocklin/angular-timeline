@@ -1,0 +1,61 @@
+<a href="https://github.com/rpocklin/angular-scroll-animate.git/edit/master/dist/angular-scroll-animate.js" class="improve-docs"><i class="icon-edit"> </i>Improve this doc</a><a href="https://github.com/rpocklin/angular-scroll-animate.git/blob/fb82569/dist/angular-scroll-animate.js#L43" class="view-source"><i class="icon-eye-open"> </i>View source</a><h1><code ng:non-bindable="">when-visible</code>
+<div><span class="hint">directive in module <code ng:non-bindable="">angular-scroll-animate</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="angular-scroll-animate-directive-page angular-scroll-animate-directive-when-visible-page"><p>Allows method hooks into the detection of when an element is scrolled into or out of view.</p>
+</div></div>
+<h2 id="usage">Usage</h2>
+<div class="usage">as attribute<pre class="prettyprint linenums">&lt;ANY when-visible
+     when-not-visible="{string}"
+     [when-not-visible="{string}"]
+     [percentage="{delayPercent}"]
+     [override="{bindScrollTo}"]&gt;
+   ...
+&lt;/ANY&gt;</pre>
+<h4 id="usage_parameters">Parameters</h4><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>when-not-visible</td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="angular-scroll-animate-directive-page angular-scroll-animate-directive-when-visible-page"><p>function to execute when element is scrolled into viewport</p>
+</div></td></tr><tr><td>when-not-visible <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="angular-scroll-animate-directive-page angular-scroll-animate-directive-when-visible-page"><p>function to execute when element is scrolled out of viewport</p>
+</div></td></tr><tr><td>percentage <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-delaypercent">delayPercent</a></td><td><div class="angular-scroll-animate-directive-page angular-scroll-animate-directive-when-visible-page"><p>(of px) to delay animate when visible transition.</p>
+</div></td></tr><tr><td>override <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-bindscrollto">bindScrollTo</a></td><td><div class="angular-scroll-animate-directive-page angular-scroll-animate-directive-when-visible-page"><p>default scroll event binding to another parent container.</p>
+</div></td></tr></tbody></table></div>
+<h2 id="example">Example</h2>
+<div class="example"><div class="angular-scroll-animate-directive-page angular-scroll-animate-directive-when-visible-page"><h4 id="example_source">Source</h4>
+<div source-edit="angular-scroll-animate" source-edit-deps="angular.js controller.js" source-edit-html="index.html" source-edit-css="animations.css" source-edit-js="controller.js" source-edit-json="" source-edit-unit="" source-edit-scenario=""></div>
+<div class="tabbable"><div class="tab-pane" title="index.html">
+<pre class="prettyprint linenums" ng-set-text="index.html" ng-html-wrap-loaded="angular-scroll-animate angular.js controller.js"></pre>
+<script type="text/ng-template" id="index.html">
+  <div ng-controller="ExampleCtrl">
+    <div class="car" when-visible="animateIn" when-not-visible="animateOut">Broom</div>
+  </div>
+</script>
+</div>
+<div class="tab-pane" title="animations.css">
+<pre class="prettyprint linenums" ng-set-text="animations.css"></pre>
+<style type="text/css" id="animations.css">
+  .hidden { visibility: hidden; }
+  .fadeIn { transition: all 300ms ease-in 2s; }
+</style>
+</div>
+<div class="tab-pane" title="controller.js">
+<pre class="prettyprint linenums" ng-set-text="controller.js"></pre>
+<script type="text/ng-template" id="controller.js">
+angular.module('example', []).controller('ExampleCtrl', function($scope) {
+
+  $scope.animateIn = function($el) {
+    $el.removeClass('hidden');
+    $el.addClass('fadeIn');
+  };
+
+  $scope.animateOut = function($el) {
+   $el.addClass('hidden');
+    $el.removeClassClass('fadeIn');
+  };
+});
+
+</script>
+</div>
+</div><h4 id="example_demo">Demo</h4>
+<div class="well doc-example-live animate-container" ng-embed-app="angular-scroll-animate" ng-set-html="index.html" ng-eval-javascript="controller.js"></div>
+</div></div>
+</div>
