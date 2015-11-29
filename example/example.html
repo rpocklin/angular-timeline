@@ -1,33 +1,36 @@
 <div class="container-fluid">
   <h1>Angular Timeline</h1>
-	<button ng-click="addEvent()">Add New Event</button>
-	<br/>
-	<br/>
-
+  <button ng-click="addEvent()">Add New Event</button>
+  <button ng-click="leftAlign()">Left Side</button>
+  <button ng-click="rightAlign()">Right Side</button>
+  <button ng-click="defaultAlign()">Alternate Sides</button>
+  <br/>
+  <br/>
   <timeline>
     <timeline-event ng-repeat="event in events">
 
       <!-- uses angular-scroll-animate to give it some pop -->
       <timeline-badge class="{{event.badgeClass}} timeline-hidden"
                       when-visible="animateElementIn" when-not-visible="animateElementOut">
-	      <i class="glyphicon {{event.badgeIconClass}}"></i>
+        <i class="glyphicon {{event.badgeIconClass}}"></i>
       </timeline-badge>
 
-		  <!-- uses angular-scroll-animate to give it some pop -->
+      <!-- uses angular-scroll-animate to give it some pop -->
       <timeline-panel class="{{event.badgeClass}} timeline-hidden"
                       when-visible="animateElementIn" when-not-visible="animateElementOut">
         <timeline-heading>
           <h4>{{event.title}}</h4>
+
           <p ng-if="event.when">
             <small class="text-muted"><i class="glyphicon glyphicon-time"></i>{{event.when}}</small>
           </p>
-	        <p ng-if="event.titleContentHtml" ng-bind-html="event.titleContentHtml">
-	        </p>
+          <p ng-if="event.titleContentHtml" ng-bind-html="event.titleContentHtml">
+          </p>
         </timeline-heading>
-	      <p ng-bind-html="event.contentHtml"></p>
-	      <timeline-footer ng-if="event.footerContentHtml">
-		      <span ng-bind-html="event.footerContentHtml"></span>
-				</timeline-footer>
+        <p ng-bind-html="event.contentHtml"></p>
+        <timeline-footer ng-if="event.footerContentHtml">
+          <span ng-bind-html="event.footerContentHtml"></span>
+        </timeline-footer>
       </timeline-panel>
     </timeline-event>
   </timeline>

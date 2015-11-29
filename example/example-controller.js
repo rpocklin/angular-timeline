@@ -50,6 +50,18 @@ var ExampleCtrl = function($rootScope, $document, $timeout, $scope) {
 		$el.addClass('timeline-hidden');
 		$el.removeClass('bounce-in');
 	};
+
+	$scope.leftAlign = function() {
+		$scope.side = 'left';
+	}
+
+	$scope.rightAlign = function() {
+		$scope.side = 'right';
+	}
+
+	$scope.defaultAlign = function() {
+		$scope.side = ''; // or 'alternate'
+	}
 };
 
 angular.module('example').controller('ExampleCtrl', ExampleCtrl);

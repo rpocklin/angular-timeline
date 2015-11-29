@@ -30,7 +30,8 @@ angular.module('angular-timeline').directive('timeline', function() {
   return {
     restrict: 'AE',
     transclude: true,
-    template: '<ul class="timeline" ng-transclude></ul>'
+    template: '<ul class="timeline" ng-transclude></ul>',
+    controller: function() {}
   };
 });
 
@@ -45,13 +46,42 @@ angular.module('angular-timeline').directive('timeline', function() {
  * of the timeline line.
  *
  * You typically embed a `timeline-badge` and `timeline-panel` element within a `timeline-event`.
+ *
+ * @param {string=} side  Define the side of the element (i.e. side="left", side="right", or use an expression).
  */
+
 angular.module('angular-timeline').directive('timelineEvent', function() {
   return {
     require: '^timeline',
     restrict: 'AE',
     transclude: true,
-    template: '<li ng-class-even="\'timeline-inverted\'" ng-transclude></li>'
+    template: '<li ng-class-odd="oddClass" ng-class-even="evenClass" ng-transclude></li>',
+    link: function(scope, element, attrs, controller) {
+
+      var checkClass = function(side, leftSide) {
+
+        var leftClass = '';
+        var rightClass = 'timeline-inverted';
+
+        if (side === 'left' || (!side && leftSide === true)) {
+          return leftClass;
+        }
+        else if ((side === 'alternate' || !side) && leftSide === false) {
+          return rightClass;
+        }
+        else if (side === 'right') {
+          return rightClass;
+        }
+        else {
+          return leftClass;
+        }
+      };
+
+      scope.$watch('side', function(newValue, oldValue) {
+        scope.oddClass = checkClass(scope.side, true);
+        scope.evenClass = checkClass(scope.side, false);
+      });
+    }
   };
 });
 
