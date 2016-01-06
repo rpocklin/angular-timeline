@@ -65,7 +65,7 @@ show history or describe a sequence of events.
   
     <!-- view -->
     <timeline>
-      <timeline-event ng-repeat="event in events">
+      <timeline-event ng-repeat="event in events" side="right">
         <timeline-badge class="{{event.badgeClass}}">
           <i class="glyphicon {{event.badgeIconClass}}"></i>
         </timeline-badge>
@@ -122,6 +122,7 @@ There is a bit of markup here but `<timeline-heading>` is optional.
 
 ## History
 
+* 1.6.2 Fixed missing logic in passing `side` attribute declaration (was watching parent scope)
 * 1.6.1 Added attribute for `side=left` or `side=right` to force left or right-handed columns for timeline events.
 * 1.6.0 Changed `hidden` to `timeline-hidden` class in example an `angular-timeline-animations.css`.
 * 1.5.2 Updated dependency used in example `angular-scroll-animate` from 0.8.0 to 0.9.1.
