@@ -11,7 +11,7 @@
  *
  * You typically embed a `timeline-badge` and `timeline-panel` element within a `timeline-event`.
  *
- * @param {string=} side  Define the side of the element (i.e. side="left", side="right", or use an expression).
+ * @param {string=} side  Define the side of the element (i.e. side="left", side="right", or use an {{ expression }}).
  */
 
 angular.module('angular-timeline').directive('timelineEvent', function() {
@@ -41,10 +41,16 @@ angular.module('angular-timeline').directive('timelineEvent', function() {
         }
       };
 
-      scope.$watch('side', function(newValue, oldValue) {
-        scope.oddClass = checkClass(scope.side, true);
-        scope.evenClass = checkClass(scope.side, false);
+      var updateRowClasses = function(value) {
+        scope.oddClass = checkClass(value, true);
+        scope.evenClass = checkClass(value, false);
+      };
+
+      attrs.$observe('side', function(newValue) {
+        updateRowClasses(newValue);
       });
+
+      updateRowClasses(attrs.side);
     }
   };
 });

@@ -8,6 +8,8 @@ var ExampleCtrl = function($rootScope, $document, $timeout, $scope) {
 		          "ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor." +
 		          "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
 
+	$scope.side = '';
+
 	$scope.events = [{
 		badgeClass: 'info',
 		badgeIconClass: 'glyphicon-check',
