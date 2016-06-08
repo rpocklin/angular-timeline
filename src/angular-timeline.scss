@@ -6,6 +6,8 @@ $panelBorderColor: #ccc;
 $anchorBgColor: #acb7c0;
 $timelineCenterColor: #cccccc;
 
+@import 'angular-timeline-images';
+
 .timeline {
   padding: 0;
   list-style: none;
@@ -24,156 +26,146 @@ $timelineCenterColor: #cccccc;
   margin-left: -1.5px;
 }
 
-
-// li is timeline-event
-.timeline li {
+.timeline-event {
   margin-bottom: 20px;
   position: relative;
+}
+.timeline-footer {
+  margin-top: 10px;
+  padding: 10px 0;
 
-  .timeline-footer {
-    margin-top: 10px;
-    padding: 10px 0;
-
-    a {
-      color: $anchorTextColor;
-      background-color: $anchorBgColor;
-      border-radius: 0.25em;
-      padding: 0.8em 1em;
-      margin: 0;
-    }
-  }
-
-  timeline-badge.primary {
-    background-color: #2e6da4 !important;
-  }
-
-  timeline-badge.success {
-    background-color: #3f903f !important;
-  }
-
-  timeline-badge.warning {
-    background-color: #f0ad4e !important;
-  }
-
-  timeline-badge.danger {
-    background-color: #d9534f !important;
-  }
-
-  timeline-badge.info {
-    background-color: #5bc0de !important;
-  }
-
-  .timeline-title {
-    margin-top: 0;
-  }
-
-  timeline-panel > * {
+  a {
+    color: $anchorTextColor;
+    background-color: $anchorBgColor;
+    border-radius: 0.25em;
+    padding: 0.8em 1em;
     margin: 0;
   }
-
-  timeline-panel {
-    background-color: $panelBackgroundColor;
-    float: left;
-    border: 1px solid #d4d4d4;
-    border-radius: 2px;
-    padding: 12px;
-    position: relative;
-    -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
-  }
-
-  timeline-panel:before {
-    position: absolute;
-    top: $top;
-    right: -15px;
-    display: inline-block;
-    border-top: 15px solid transparent;
-    border-left: 15px solid $panelBorderColor;
-    border-right: 0 solid $panelBorderColor;
-    border-bottom: 15px solid transparent;
-    content: " ";
-  }
-
-  timeline-panel:after {
-    position: absolute;
-    top: $top + 1;
-    right: -14px;
-    display: inline-block;
-    border-top: 14px solid transparent;
-    border-left: 14px solid $panelBackgroundColor;
-    border-right: 0 solid $panelBackgroundColor;
-    border-bottom: 14px solid transparent;
-    content: " ";
-  }
-
-  timeline-badge {
-    box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
-    color: #fff;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    font-size: 1.4em;
-    text-align: center;
-    position: absolute;
-    top: 26px;
-    left: 50%;
-    margin-left: -25px;
-    background-color: #999999;
-    z-index: 100;
-    border-top-right-radius: 50%;
-    border-top-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-  }
-
-  &.timeline-inverted timeline-panel {
-    float: right;
-  }
-
-  &.timeline-inverted timeline-panel:before {
-    border-left-width: 0;
-    border-right-width: 15px;
-    left: -15px;
-    right: auto;
-  }
-
-  &.timeline-inverted timeline-panel:after {
-    border-left-width: 0;
-    border-right-width: 14px;
-    left: -14px;
-    right: auto;
-  }
 }
 
-.timeline-heading {
-  .glyphicon {
-    margin-right: 4px;
-    vertical-align: -1px;
-  }
+timeline-badge.primary {
+  background-color: #2e6da4 !important;
 }
 
-.timeline li:before,
-.timeline li:after {
+timeline-badge.success {
+  background-color: #3f903f !important;
+}
+
+timeline-badge.warning {
+  background-color: #f0ad4e !important;
+}
+
+timeline-badge.danger {
+  background-color: #d9534f !important;
+}
+
+timeline-badge.info {
+  background-color: #5bc0de !important;
+}
+
+.timeline-title {
+  margin-top: 0;
+}
+
+.timeline-panel > * {
+  margin: 0;
+}
+
+.timeline-panel {
+  background-color: $panelBackgroundColor;
+  float: left;
+  border: 1px solid #d4d4d4;
+  border-radius: 2px;
+  padding: 12px;
+  position: relative;
+  -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+}
+
+.timeline-panel:before {
+  position: absolute;
+  top: $top;
+  right: -15px;
+  display: inline-block;
+  border-top: 15px solid transparent;
+  border-left: 15px solid $panelBorderColor;
+  border-right: 0 solid $panelBorderColor;
+  border-bottom: 15px solid transparent;
+  content: " ";
+}
+
+.timeline-panel:after {
+  position: absolute;
+  top: $top + 1;
+  right: -14px;
+  display: inline-block;
+  border-top: 14px solid transparent;
+  border-left: 14px solid $panelBackgroundColor;
+  border-right: 0 solid $panelBackgroundColor;
+  border-bottom: 14px solid transparent;
+  content: " ";
+}
+
+.timeline-badge {
+  box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 1.4em;
+  text-align: center;
+  position: absolute;
+  top: 26px;
+  left: 50%;
+  margin-left: -25px;
+  background-color: #999999;
+  z-index: 100;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+
+.timeline-inverted .timeline-panel {
+  float: right;
+}
+
+.timeline-inverted .timeline-panel:before {
+  border-left-width: 0;
+  border-right-width: 15px;
+  left: -15px;
+  right: auto;
+}
+
+.timeline-inverted .timeline-panel:after {
+  border-left-width: 0;
+  border-right-width: 14px;
+  left: -14px;
+  right: auto;
+}
+
+.timeline-event:before,
+.timeline-event:after {
   content: " ";
   display: table;
 }
 
-.timeline li:after {
+.timeline-event:after {
   clear: both;
 }
 
-.timeline li:before,
-.timeline li:after {
+.timeline-event:before,
+.timeline-event:after {
   content: " ";
   display: table;
 }
 
-.timeline li:after {
+.timeline-event:after {
   clear: both;
 }
 
 @media only screen and (min-width: 768px) {
-  ul.timeline li timeline-panel {
+  .timeline-panel {
     width: calc(50% - 45px);
     width: -moz-calc(50% - 45px);
     width: -webkit-calc(50% - 45px);
@@ -182,27 +174,27 @@ $timelineCenterColor: #cccccc;
 
 @media only screen and (max-width: 767px) {
 
-  ul.timeline:before {
+  .timeline:before {
     left: 40px;
   }
 
-  ul.timeline li timeline-panel {
+  .timeline-panel {
     width: calc(100% - 85px);
     width: -moz-calc(100% - 85px);
     width: -webkit-calc(100% - 85px);
   }
 
-  ul.timeline li timeline-badge {
+  .timeline-badge {
     left: 15px;
     margin-left: 0;
     top: $top + 1;
   }
 
-  ul.timeline li timeline-panel {
+  .timeline-panel {
     float: right;
   }
 
-  ul.timeline li timeline-panel:before {
+  .timeline-panel:before {
     border-left-width: 0;
     border-right-width: 15px;
     left: -15px;
@@ -210,7 +202,7 @@ $timelineCenterColor: #cccccc;
     top: $top + 11px;
   }
 
-  ul.timeline li timeline-panel:after {
+  .timeline-panel:after {
     border-left-width: 0;
     border-right-width: 14px;
     left: -14px;
@@ -219,35 +211,3 @@ $timelineCenterColor: #cccccc;
   }
 }
 
-img {
-  vertical-align: middle;
-}
-
-.img-responsive {
-  display: block;
-  height: auto;
-  max-width: 100%;
-}
-
-.img-rounded {
-  border-radius: 3px;
-}
-
-.img-thumbnail {
-  background-color: #fff;
-  border: 1px solid #ededf0;
-  border-radius: 3px;
-  display: inline-block;
-  height: auto;
-  line-height: 1.428571429;
-  max-width: 100%;
-  moz-transition: all .2s ease-in-out;
-  o-transition: all .2s ease-in-out;
-  padding: 2px;
-  transition: all .2s ease-in-out;
-  webkit-transition: all .2s ease-in-out;
-}
-
-.img-circle {
-  border-radius: 50%;
-}
