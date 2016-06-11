@@ -8,7 +8,7 @@
     "type": "git",
     "url": "http://github.com/rpocklin/angular-timeline.git"
   },
-  "main": ["src/angular-timeline.js", "src/angular-timeline.css"],
+  "main": "dist/angular-timeline.js",
   "keywords": [
     "angular",
     "timeline",
