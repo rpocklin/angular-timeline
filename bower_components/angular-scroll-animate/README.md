@@ -38,7 +38,7 @@ The goal of this directive is to be small and focused around behaviour that chan
 
 1. Ensure you have a CSS class to mask the visibility of an element eg.
   ```css
-  .hidden {
+  .not-visible {
     visibility: hidden;
   }
   ```
@@ -111,6 +111,7 @@ Example markup:
 
 ## History
 
+* 0.9.9 Changed `.hidden` class in example to `.not-visible` to avoid CSS clashes.
 * 0.9.8 Added override attribute of `bind-scroll-to` to bind scroll events to custom parents - see [#3](/../../issues/3)).
 * 0.9.8 Optimised reflow / repaints to use `requestAnimationFrame` for performance reasons.
 * 0.9.4 Re-fixed `when-not-visible` so it is truely optional (thanks @jagged3dge)
