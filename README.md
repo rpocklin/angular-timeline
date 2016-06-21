@@ -122,6 +122,7 @@ There is a bit of markup here but `<timeline-heading>` is optional.
 
 ## History
 
+* 1.7.0 Changed CSS classes to fix animations in and out (in example).
 * 1.6.2 Fixed missing logic in passing `side` attribute declaration (was watching parent scope)
 * 1.6.1 Added attribute for `side=left` or `side=right` to force left or right-handed columns for timeline events.
 * 1.6.0 Changed `hidden` to `timeline-hidden` class in example an `angular-timeline-animations.css`.

@@ -1,26 +1,26 @@
-//.timeline-hidden {
-//  display: block !important;
-//  opacity: 0;
-//}
+.timeline-hidden {
+  display: block !important;
+  opacity: 0;
+}
 
 @media only screen and (min-width: 768px) {
   .timeline timeline-event:nth-child(odd) timeline-panel.bounce-in {
-    animation:  cd-bounce-2 0.6s;
+    animation:  cd-bounce-2 0.5s;
   }
 
   .timeline timeline-event:nth-child(even) timeline-panel.bounce-in {
-    animation:  cd-bounce-2-inverse 0.6s;
+    animation:  cd-bounce-2-inverse 0.5s;
   }
 }
 
 @media only screen and (max-width: 767px) {
   .timeline timeline-event timeline-panel.bounce-in {
-    animation:  cd-bounce-2 0.6s;
+    animation:  cd-bounce-2 0.5s;
   }
 }
 
 .timeline timeline-event timeline-badge.bounce-in {
-  animation:  cd-bounce-1 0.6s;
+  animation:  cd-bounce-1 0.5s;
 }
 
 @-webkit-keyframes cd-bounce-2 {
