@@ -1,6 +1,6 @@
 {
   "name": "angular-timeline",
-  "version": "1.6.2",
+  "version": "1.7.0",
   "license": "MIT",
   "main": [
     "dist/angular-timeline.js",
@@ -41,6 +41,6 @@
     "underscore": "^1.7.0",
     "jquery": "^2.1.1",
     "bootstrap": "^3.3.4",
-    "angular-scroll-animate": "^0.9.8"
+    "angular-scroll-animate": "^0.9.9"
   }
 }

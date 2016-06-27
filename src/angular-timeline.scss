@@ -30,6 +30,7 @@ $timelineCenterColor: #cccccc;
   margin-bottom: 20px;
   position: relative;
 }
+
 .timeline-footer {
   margin-top: 10px;
   padding: 10px 0;
@@ -67,11 +68,11 @@ timeline-badge.info {
   margin-top: 0;
 }
 
-.timeline-panel > * {
+timeline-panel > * {
   margin: 0;
 }
 
-.timeline-panel {
+timeline-panel {
   background-color: $panelBackgroundColor;
   float: left;
   border: 1px solid #d4d4d4;
@@ -82,7 +83,7 @@ timeline-badge.info {
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
 }
 
-.timeline-panel:before {
+timeline-panel:before {
   position: absolute;
   top: $top;
   right: -15px;
@@ -94,7 +95,7 @@ timeline-badge.info {
   content: " ";
 }
 
-.timeline-panel:after {
+timeline-panel:after {
   position: absolute;
   top: $top + 1;
   right: -14px;
@@ -106,7 +107,7 @@ timeline-badge.info {
   content: " ";
 }
 
-.timeline-badge {
+timeline-badge {
   box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
   color: #fff;
   width: 50px;
@@ -126,18 +127,18 @@ timeline-badge.info {
   border-bottom-left-radius: 50%;
 }
 
-.timeline-inverted .timeline-panel {
+.timeline-inverted timeline-panel {
   float: right;
 }
 
-.timeline-inverted .timeline-panel:before {
+.timeline-inverted timeline-panel:before {
   border-left-width: 0;
   border-right-width: 15px;
   left: -15px;
   right: auto;
 }
 
-.timeline-inverted .timeline-panel:after {
+.timeline-inverted timeline-panel:after {
   border-left-width: 0;
   border-right-width: 14px;
   left: -14px;
@@ -165,7 +166,8 @@ timeline-badge.info {
 }
 
 @media only screen and (min-width: 768px) {
-  .timeline-panel {
+  
+  timeline-panel {
     width: calc(50% - 45px);
     width: -moz-calc(50% - 45px);
     width: -webkit-calc(50% - 45px);
@@ -178,23 +180,23 @@ timeline-badge.info {
     left: 40px;
   }
 
-  .timeline-panel {
+  timeline-panel {
     width: calc(100% - 85px);
     width: -moz-calc(100% - 85px);
     width: -webkit-calc(100% - 85px);
   }
 
-  .timeline-badge {
+  timeline-badge {
     left: 15px;
     margin-left: 0;
     top: $top + 1;
   }
 
-  .timeline-panel {
+  timeline-panel {
     float: right;
   }
 
-  .timeline-panel:before {
+  timeline-panel:before {
     border-left-width: 0;
     border-right-width: 15px;
     left: -15px;
@@ -202,7 +204,7 @@ timeline-badge.info {
     top: $top + 11px;
   }
 
-  .timeline-panel:after {
+  timeline-panel:after {
     border-left-width: 0;
     border-right-width: 14px;
     left: -14px;
