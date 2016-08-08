@@ -2,18 +2,18 @@
   margin-right: 4px;
   vertical-align: -1px; }
 
-img {
+.timeline img {
   vertical-align: middle; }
 
-.img-responsive {
+.timeline .img-responsive {
   display: block;
   height: auto;
   max-width: 100%; }
 
-.img-rounded {
+.timeline .img-rounded {
   border-radius: 3px; }
 
-.img-thumbnail {
+.timeline .img-thumbnail {
   background-color: #fff;
   border: 1px solid #ededf0;
   border-radius: 3px;
@@ -27,7 +27,7 @@ img {
   transition: all .2s ease-in-out;
   webkit-transition: all .2s ease-in-out; }
 
-.img-circle {
+.timeline .img-circle {
   border-radius: 50%; }
 
 .timeline {
