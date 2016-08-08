@@ -19,6 +19,7 @@ angular.module('angular-timeline').directive('timelineEvent', function() {
     require: '^timeline',
     restrict: 'AE',
     transclude: true,
+    replace: true,
     template: '<li class="timeline-event" ng-class-odd="oddClass" ng-class-even="evenClass" ng-transclude></li>',
     link: function(scope, element, attrs, controller) {
 

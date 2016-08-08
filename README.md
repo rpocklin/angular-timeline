@@ -9,6 +9,8 @@ show history or describe a sequence of events.
 
 [Demo](http://rpocklin.github.io/angular-timeline/example/index.html)
 
+[Demo using attributes](http://rpocklin.github.io/angular-timeline/example/index-attributes.html)
+
 [Demo without bootstrap](http://rpocklin.github.io/angular-timeline/example/index-no-bootstrap.html)
 
 [Original Implementation (HTML / Javascript)](http://bootsnipp.com/snippets/featured/timeline-responsive)

@@ -13,6 +13,7 @@ angular.module('angular-timeline').directive('timelineBadge', function() {
     require: '^timelineEvent',
     restrict: 'AE',
     transclude: true,
+    replace: true,
     template: '<div class="timeline-badge" ng-transclude></div>'
   };
 });

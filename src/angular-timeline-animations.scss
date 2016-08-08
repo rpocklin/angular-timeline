@@ -4,22 +4,22 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .timeline timeline-event:nth-child(odd) timeline-panel.bounce-in {
+  .timeline .timeline-event:nth-child(odd) .timeline-panel.bounce-in {
     animation:  cd-bounce-2 0.5s;
   }
 
-  .timeline timeline-event:nth-child(even) timeline-panel.bounce-in {
+  .timeline .timeline-event:nth-child(even) .timeline-panel.bounce-in {
     animation:  cd-bounce-2-inverse 0.5s;
   }
 }
 
 @media only screen and (max-width: 767px) {
-  .timeline timeline-event timeline-panel.bounce-in {
+  .timeline .timeline-event .timeline-panel.bounce-in {
     animation:  cd-bounce-2 0.5s;
   }
 }
 
-.timeline timeline-event timeline-badge.bounce-in {
+.timeline .timeline-event .timeline-badge.bounce-in {
   animation:  cd-bounce-1 0.5s;
 }
 
@@ -198,5 +198,3 @@
     transform: scale(1);
   }
 }
-
-

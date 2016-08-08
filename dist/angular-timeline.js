@@ -13,6 +13,7 @@ angular.module('angular-timeline').directive('timelineBadge', function() {
     require: '^timelineEvent',
     restrict: 'AE',
     transclude: true,
+    replace: true,
     template: '<div class="timeline-badge" ng-transclude></div>'
   };
 });
@@ -30,6 +31,7 @@ angular.module('angular-timeline').directive('timeline', function() {
   return {
     restrict: 'AE',
     transclude: true,
+    replace: true,
     template: '<ul class="timeline" ng-transclude></ul>',
     controller: function() {}
   };
@@ -55,6 +57,7 @@ angular.module('angular-timeline').directive('timelineEvent', function() {
     require: '^timeline',
     restrict: 'AE',
     transclude: true,
+    replace: true,
     template: '<li class="timeline-event" ng-class-odd="oddClass" ng-class-even="evenClass" ng-transclude></li>',
     link: function(scope, element, attrs, controller) {
 
@@ -105,6 +108,7 @@ angular.module('angular-timeline').directive('timelineFooter', function() {
     require: '^timelinePanel',
     restrict: 'AE',
     transclude: true,
+    replace: true,
     template: '<div class="timeline-footer" ng-transclude></div>'
   };
 });
@@ -123,6 +127,7 @@ angular.module('angular-timeline').directive('timelineHeading', function() {
     require: '^timelinePanel',
     restrict: 'AE',
     transclude: true,
+    replace: true,
     template: '<div class="timeline-heading" ng-transclude></div>'
   };
 });
@@ -141,6 +146,7 @@ angular.module('angular-timeline').directive('timelinePanel', function() {
     require: '^timeline',
     restrict: 'AE',
     transclude: true,
+    replace: true,
     template: '<div class="timeline-panel" ng-transclude></div>'
   };
 });
