@@ -13,6 +13,7 @@ angular.module('angular-timeline').directive('timelinePanel', function() {
     require: '^timeline',
     restrict: 'AE',
     transclude: true,
+    replace: true,
     template: '<div class="timeline-panel" ng-transclude></div>'
   };
 });
