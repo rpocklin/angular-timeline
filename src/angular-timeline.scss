@@ -26,7 +26,7 @@ $timelineCenterColor: #cccccc;
   margin-left: -1.5px;
 }
 
-.timeline-event {
+.timeline-event, .timeline-row {
   margin-bottom: 20px;
   position: relative;
 }
@@ -127,18 +127,18 @@ timeline-badge {
   border-bottom-left-radius: 50%;
 }
 
-.timeline-inverted timeline-panel {
+.timeline-inverted timeline-panel, timeline-panel.inverted {
   float: right;
 }
 
-.timeline-inverted timeline-panel:before {
+.timeline-inverted timeline-panel:before, timeline-panel.inverted:before {
   border-left-width: 0;
   border-right-width: 15px;
   left: -15px;
   right: auto;
 }
 
-.timeline-inverted timeline-panel:after {
+.timeline-inverted timeline-panel:after, timeline-panel.inverted:after {
   border-left-width: 0;
   border-right-width: 14px;
   left: -14px;
@@ -146,25 +146,22 @@ timeline-badge {
 }
 
 .timeline-event:before,
-.timeline-event:after {
+.timeline-event:after,
+.timeline-row:before,
+.timeline-row:after {
   content: " ";
   display: table;
+}
+
+.timeline-row:after {
+  clear: both;
 }
 
 .timeline-event:after {
   clear: both;
 }
 
-.timeline-event:before,
-.timeline-event:after {
-  content: " ";
-  display: table;
-}
-
-.timeline-event:after {
-  clear: both;
-}
-
+/* medium+ screens */
 @media only screen and (min-width: 768px) {
   
   timeline-panel {
@@ -174,6 +171,7 @@ timeline-badge {
   }
 }
 
+/* small screen */
 @media only screen and (max-width: 767px) {
 
   .timeline:before {

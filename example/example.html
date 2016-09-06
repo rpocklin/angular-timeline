@@ -7,6 +7,25 @@
   <br/>
   <br/>
   <timeline>
+    <timeline-row>
+      <timeline-panel>
+        <timeline-heading>
+          <h4>Ipsum lorem</h4>
+        </timeline-heading>
+        <p>blah blah</p>
+      </timeline-panel>
+      <timeline-badge class="default timeline-hidden" when-visible="animateElementIn"
+                      when-not-visible="animateElementOut"><i class="glyphicon glyphicon-credit-card"></i>
+      </timeline-badge>
+      </timeline-badge>
+      <timeline-panel class="inverted">
+        <timeline-heading>
+          <h4>Ipsum lorem</h4>
+        </timeline-heading>
+        <p>blah blah</p>
+      </timeline-panel>
+    </timeline-row>
+
     <!-- can also hard-code to side="left" or side="right" -->
     <timeline-event ng-repeat="event in events" side="{{side}}">
       <!-- uses angular-scroll-animate to give it some pop -->

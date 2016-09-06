@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc directive
- * @name angular-timeline.directive:timeline
+ * @name angular-timeline.directive:timeline-event
  * @restrict AE
  *
  * @description
