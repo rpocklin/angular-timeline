@@ -75,7 +75,7 @@ timeline-panel > * {
 timeline-panel {
   background-color: $panelBackgroundColor;
   float: left;
-  border: 1px solid #d4d4d4;
+  border: 1px solid $panelBorderColor;
   border-radius: 2px;
   padding: 12px;
   position: relative;
